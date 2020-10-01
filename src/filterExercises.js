@@ -71,3 +71,42 @@ export const getStudentsByLanguage = (language) => {
 // It should accept an array of strings as a parameter named `languages`
 // It should return an array of students who know ALL of the given languages
 // Ex: getStudentsByLanguages(["Javascript", "C#"])
+
+export const getStudentsByLanguages = (languages) => {
+    let matchesLanguages = [];
+    languages.map((language) => {
+      matchesLanguages = students.filter((student) =>
+        student.languages.includes(language)
+      );
+    });
+    return matchesLanguages;
+  };
+
+
+
+// export const getStudentsByLanguages = (languages) => {
+//     let correctStudents = []
+//     let fullyCorrectStudents = []
+//     students.map((student)=> {
+//         languages.forEach(language => {
+//             if (student.languages.includes(language)=== true) {
+//                 correctStudents.push(student)
+//             }
+//         })
+//     })
+
+//     correctStudents.filter((student)=> {
+//         fullyCorrectStudents = correctStudents
+//         languages.filter(language => {
+//             if(student.languages.includes(language)=== false) {
+//                 fullyCorrectStudents.pop(student)
+//             }
+//             return fullyCorrectStudents
+//         })
+//     })
+
+    
+//     return fullyCorrectStudents
+// }
+
+console.log(getStudentsByLanguages(["C#", "Javascript"]))
